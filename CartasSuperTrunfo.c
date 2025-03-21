@@ -39,7 +39,7 @@ int main() {
     scanf("%s",Cidade1);
 
     printf("Informe a população da cidade de %s: \n", Cidade1);
-    scanf("%d", &PopCidade1);
+    scanf("%ld", &PopCidade1);
 
     printf("Informe a área do município de %s: \n",Cidade1);
     scanf("%f", &AreaCidade1);
@@ -68,7 +68,7 @@ int main() {
     scanf("%s",Cidade2);
 
     printf("Informe a população da cidade de %s: \n", Cidade2);
-    scanf("%d", &PopCidade2);
+    scanf("%ld", &PopCidade2);
 
     printf("Informe a área do município de %s: \n",Cidade2);
     scanf("%f", &AreaCidade2);
