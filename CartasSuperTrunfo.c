@@ -13,8 +13,9 @@ int main() {
 
     // Declaração das variáveis do sistema
     char Estado1[2], Estado2[2], CodCarta1[3], CodCarta2[3], Cidade1[50], Cidade2[50];
-    int PopCidade1, PopCidade2, PTCidade1, PTCidade2;
-    float AreaCidade1, AreaCidade2, PIBCidade1, PIBCidade2, DPCidade1, DPCidade2, PPCCidade1, PPCCidade2;
+    unsigned long int PopCidade1, PopCidade2; 
+    int PTCidade1, PTCidade2, CompPop, CompArea, CompPIB, CompDP, CompPPC, CompSP, CompPT;
+    float AreaCidade1, AreaCidade2, PIBCidade1, PIBCidade2, DPCidade1, DPCidade2, PPCCidade1, PPCCidade2, SPCarta1, SPCarta2;
 
     // Inicialização do sistema. Informação ao usuário dos objetivos do jogo.
     printf("Seja bem vindo ao SuperTrunfo das cidades brasileiras!\n");
@@ -51,6 +52,7 @@ int main() {
 
     DPCidade1 = PopCidade1 / AreaCidade1;
     PPCCidade1 = (PIBCidade1*1000000000) / PopCidade1;
+    SPCarta1 = (PopCidade1+AreaCidade1+PIBCidade1+PTCidade1+(1/DPCidade1)+PPCCidade1);
 
     // Obtenção dos dados para a segunda carta
     printf("\n\nVamos cadastrar a segunda carta!\nComeçaremos pela escolha do estado.\n\n");
@@ -79,6 +81,7 @@ int main() {
 
     DPCidade2 = (float) PopCidade2 / AreaCidade2;
     PPCCidade2 = (float) (PIBCidade2*1000000000) / PopCidade2;
+    SPCarta2 = (PopCidade2+AreaCidade2+PIBCidade2+PTCidade2+(1/DPCidade2)+PPCCidade2);
 
     // Exibição dos Dados das Cartas:
     // Exibe os valores inseridos para cada atributo da cidade, um por linha, para a carta 01.
@@ -87,6 +90,21 @@ int main() {
     
     // Exibe os valores inseridos para cada atributo da cidade, um por linha, para a carta 02.
     printf("\nVocê está cadastrando as seguintes informações para a Carta 02: \n Estado: %s\n Código da Carta: %s%s \n Nome da Cidade: %s\n População de %d habitantes\n Área de %.2f km²\n PIB: %.2f bilhões de reais\n %d pontos turísticos no município\n Densidade populacional média: %.2f hab/km²\n PPC: R$%.2f / habitante\n", Estado2, Estado2, CodCarta2, Cidade2, PopCidade2, AreaCidade2, PIBCidade2, PTCidade2, DPCidade2, PPCCidade2);
+
+    printf("\n\nChegamos ao final da jornada e vamos avaliar qual a carta vencedora?\n\n");
+
+    CompPop = PopCidade1 > PopCidade2;
+    CompArea = AreaCidade1 > AreaCidade2;
+    CompPIB = PIBCidade1 > PIBCidade2;
+    CompPT = PTCidade1 > PTCidade2;
+    CompDP = DPCidade1 < DPCidade2;
+    CompPPC = PPCCidade1 > PPCCidade2;
+    CompSP = SPCarta1 > SPCarta2;
+
+
+    printf("O resultado é: \n A carta vencedora no quesito população foi: %d\n A carta vencedora no quesito Área foi: %d\n A carta vencedora no quesito PIB foi: %d\n A carta vencedora no quesito Pontos Turísticos foi: %d\n A carta vencedora no quesito Densidade Populacional foi: %d\n A carta vencedora no quesito Pib Per Capita foi: %d\n A carta vencedora no quesito do Super Poder foi: %d\n\n", CompPop, CompArea,CompPIB,CompPT,CompDP, CompPPC, CompSP);
+
+    printf("E chegamos ao final do jogo. Esperamos que tenha se divertido e desejamos que volte logo para encarar novos desafios!");
 
     return 0;
 }
