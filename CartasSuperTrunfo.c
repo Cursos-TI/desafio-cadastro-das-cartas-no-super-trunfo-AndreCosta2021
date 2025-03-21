@@ -39,7 +39,7 @@ int main() {
     scanf("%s",Cidade1);
 
     printf("Informe a população da cidade de %s: \n", Cidade1);
-    scanf("%ld", &PopCidade1);
+    scanf("%u", &PopCidade1);
 
     printf("Informe a área do município de %s: \n",Cidade1);
     scanf("%f", &AreaCidade1);
@@ -68,7 +68,7 @@ int main() {
     scanf("%s",Cidade2);
 
     printf("Informe a população da cidade de %s: \n", Cidade2);
-    scanf("%ld", &PopCidade2);
+    scanf("%u", &PopCidade2);
 
     printf("Informe a área do município de %s: \n",Cidade2);
     scanf("%f", &AreaCidade2);
@@ -81,7 +81,7 @@ int main() {
 
     DPCidade2 = (float) PopCidade2 / AreaCidade2;
     PPCCidade2 = (float) (PIBCidade2*1000000000) / PopCidade2;
-    SPCarta2 = (PopCidade2+AreaCidade2+PIBCidade2+PTCidade2+(1/DPCidade2)+PPCCidade2);
+    SPCarta2 = (float)(PopCidade2+AreaCidade2+PIBCidade2+PTCidade2+(1/DPCidade2)+PPCCidade2);
 
     // Exibição dos Dados das Cartas:
     // Exibe os valores inseridos para cada atributo da cidade, um por linha, para a carta 01.
@@ -102,7 +102,7 @@ int main() {
     CompSP = SPCarta1 > SPCarta2;
 
 
-    printf("O resultado é: \n A carta vencedora no quesito população foi: %d\n A carta vencedora no quesito Área foi: %d\n A carta vencedora no quesito PIB foi: %d\n A carta vencedora no quesito Pontos Turísticos foi: %d\n A carta vencedora no quesito Densidade Populacional foi: %d\n A carta vencedora no quesito Pib Per Capita foi: %d\n A carta vencedora no quesito do Super Poder foi: %d\n\n", CompPop, CompArea,CompPIB,CompPT,CompDP, CompPPC, CompSP);
+    printf("O resultado é: \n A carta vencedora no quesito População foi: %d\n A carta vencedora no quesito Área foi: %d\n A carta vencedora no quesito PIB foi: %d\n A carta vencedora no quesito Pontos Turísticos foi: %d\n A carta vencedora no quesito Densidade Populacional foi: %d\n A carta vencedora no quesito Pib Per Capita foi: %d\n A carta vencedora no quesito do Super Poder foi: %d\n\n", CompPop, CompArea,CompPIB,CompPT,CompDP, CompPPC, CompSP);
 
     printf("E chegamos ao final do jogo. Esperamos que tenha se divertido e desejamos que volte logo para encarar novos desafios!");
 
